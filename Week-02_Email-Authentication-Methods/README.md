@@ -23,7 +23,7 @@ DKIM is used to verify that an email was really sent from the domain it claims a
 It does this through **Public Key Infrastructure (PKI)**, where a private key signs the email and a public key (stored in DNS) verifies it.
 
 - Confirms message integrity and domain ownership.
-- Doesn’t guarantee intent — a malicious actor could still register a look-alike domain and configure DKIM/SPF to pass.
+- Doesn’t guarantee intent, a malicious actor could still register a look-alike domain and configure DKIM/SPF to pass.
 - Example: an attacker could register **g00gle-mail.com** and pass DKIM checks, even though it’s fake.
 
 ---
@@ -89,7 +89,7 @@ Below is the breakdown of my hands-on analysis and what I observed at each step.
 
 ![Screenshot 8 – Two DKIM signatures](https://github.com/Mikala-Troupe/soc-level-1-labs/blob/051ea1c2d252a0baef73ddd27fb5d829b99d9482/Week-02_Email-Authentication-Methods/Week-02_Email-Authentication-Methods/screenshots/Lab2SS8.png)  
 **Screenshot 8** – Found two DKIM signatures: one for **Namecheap** and one for **SendGrid**.  
-- Both use the same body hash and header fields — showing the message passed through multiple mail systems.
+- Both use the same body hash and header fields, showing the message passed through multiple mail systems.
 
 ---
 
