@@ -1,6 +1,6 @@
 # 🧠 SOC Level 1 — Labs & Summaries
 
-This repository captures my weekly SOC Level 1 learning—concise write-ups, steps, findings, and screenshots.
+This repository captures my weekly SOC Level 1 learning write-ups, steps, findings, and screenshots while taking TCM Security's Security Operations (SOC) 101 course. 
 
 ## 🗓️ Weekly Index
 
