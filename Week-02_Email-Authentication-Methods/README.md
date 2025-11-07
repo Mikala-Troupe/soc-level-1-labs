@@ -8,7 +8,7 @@ This week I learned how **SPF**, **DKIM**, and **DMARC** work together to verify
 ### 🧩 Sender Policy Framework (SPF)
 SPF lets domain owners specify which mail servers are allowed to send email for their domain.
 
-![Screenshot 1 – SPF nslookup example](./screenshots/spf-example.png)  
+![Screenshot 1 – SPF nslookup example](https://github.com/Mikala-Troupe/soc-level-1-labs/blob/051ea1c2d252a0baef73ddd27fb5d829b99d9482/Week-02_Email-Authentication-Methods/Week-02_Email-Authentication-Methods/screenshots/Lab2SS1.png)  
 - Used `nslookup` on **shodan.io** as an example.  
 - **v=spf1** → version indicator.  
 - **ip4:216.117.2.180 ip4:69.72.37.146** → authorized sending IPs.  
@@ -44,36 +44,36 @@ Below is the breakdown of my hands-on analysis and what I observed at each step.
 
 ---
 
-![Screenshot 2 – Email opened in Thunderbird](./screenshots/email-thunderbird.png)  
+![Screenshot 2 – Email opened in Thunderbird](https://github.com/Mikala-Troupe/soc-level-1-labs/blob/051ea1c2d252a0baef73ddd27fb5d829b99d9482/Week-02_Email-Authentication-Methods/Week-02_Email-Authentication-Methods/screenshots/Lab2SS2.png)  
 **Screenshot 2** – Opened the email sample in Mozilla Thunderbird to view headers and message details.
 
 ---
 
-![Screenshot 3 – Email opened in Sublime Text](./screenshots/email-sublime.png)  
+![Screenshot 3 – Email opened in Sublime Text](https://github.com/Mikala-Troupe/soc-level-1-labs/blob/051ea1c2d252a0baef73ddd27fb5d829b99d9482/Week-02_Email-Authentication-Methods/Week-02_Email-Authentication-Methods/screenshots/Lab2SS3.png)  
 **Screenshot 3** – Viewed raw headers in Sublime.  
 - The **Received** header shows when and where the message was handed off.  
 - The boxed IP can’t be spoofed because it reflects a real TCP connection between mail servers.  
 
 ---
 
-![Screenshot 4 – WHOIS lookup](./screenshots/whois-lookup.png)  
+![Screenshot 4 – WHOIS lookup](https://github.com/Mikala-Troupe/soc-level-1-labs/blob/051ea1c2d252a0baef73ddd27fb5d829b99d9482/Week-02_Email-Authentication-Methods/Week-02_Email-Authentication-Methods/screenshots/Lab2SS4.png)  
 **Screenshot 4** – Used DomainTools WHOIS on IP `149.72.142.11`.  
 - **SENDGRID** → legitimate marketing platform (commonly abused).  
 - **namecheap.com** → appears in reverse DNS results.
 
 ---
 
-![Screenshot 5 – SPF pass](./screenshots/spf-pass.png)  
+![Screenshot 5 – SPF pass](https://github.com/Mikala-Troupe/soc-level-1-labs/blob/051ea1c2d252a0baef73ddd27fb5d829b99d9482/Week-02_Email-Authentication-Methods/Week-02_Email-Authentication-Methods/screenshots/Lab2SS5.png)  
 **Screenshot 5** – Email displayed in Sublime showing SPF: ~pass.
 
 ---
 
-![Screenshot 6 – dig SPF lookup](./screenshots/dig-mailservice.png)  
+![Screenshot 6 – dig SPF lookup](https://github.com/Mikala-Troupe/soc-level-1-labs/blob/051ea1c2d252a0baef73ddd27fb5d829b99d9482/Week-02_Email-Authentication-Methods/Week-02_Email-Authentication-Methods/screenshots/Lab2SS6.png)  
 **Screenshot 6** – Used `dig` with `grep -i spf` to check the SPF record for **mailserviceemailout1.namecheap.com**.
 
 ---
 
-![Screenshot 7 – SPF record for SendGrid](./screenshots/dig-sendgrid.png)  
+![Screenshot 7 – SPF record for SendGrid](https://github.com/Mikala-Troupe/soc-level-1-labs/blob/051ea1c2d252a0baef73ddd27fb5d829b99d9482/Week-02_Email-Authentication-Methods/Week-02_Email-Authentication-Methods/screenshots/Lab2SS7.png)  
 **Screenshot 7** – Queried **sendgrid.net** using `dig`.  
 - Found authorized IP range: `149.72.0.0/16`.  
 - The sender IP `149.72.142.11` falls within this range → SPF **passed**.
@@ -87,13 +87,13 @@ Below is the breakdown of my hands-on analysis and what I observed at each step.
 
 ---
 
-![Screenshot 8 – Two DKIM signatures](./screenshots/dkim-dual.png)  
+![Screenshot 8 – Two DKIM signatures](https://github.com/Mikala-Troupe/soc-level-1-labs/blob/051ea1c2d252a0baef73ddd27fb5d829b99d9482/Week-02_Email-Authentication-Methods/Week-02_Email-Authentication-Methods/screenshots/Lab2SS8.png)  
 **Screenshot 8** – Found two DKIM signatures: one for **Namecheap** and one for **SendGrid**.  
 - Both use the same body hash and header fields — showing the message passed through multiple mail systems.
 
 ---
 
-![Screenshot 9 – DKIM signature breakdown](./screenshots/dkim-details.png)  
+![Screenshot 9 – DKIM signature breakdown](https://github.com/Mikala-Troupe/soc-level-1-labs/blob/051ea1c2d252a0baef73ddd27fb5d829b99d9482/Week-02_Email-Authentication-Methods/Week-02_Email-Authentication-Methods/screenshots/Lab2SS9.png)  
 **Screenshot 9** – Analyzing DKIM header fields:  
 - **v=1** → version  
 - **a=rsa-sha256** → signature algorithm  
@@ -104,22 +104,22 @@ Below is the breakdown of my hands-on analysis and what I observed at each step.
 
 ---
 
-![Screenshot 10 – nslookup DKIM record](./screenshots/nslookup-dkim.png)  
+![Screenshot 10 – nslookup DKIM record](https://github.com/Mikala-Troupe/soc-level-1-labs/blob/051ea1c2d252a0baef73ddd27fb5d829b99d9482/Week-02_Email-Authentication-Methods/Week-02_Email-Authentication-Methods/screenshots/Lab2SS10.png)  
 **Screenshot 10** – Verified DKIM public key via `nslookup` for `s1._domainkey.namecheap.com`.
 
 ---
 
-![Screenshot 11 – MXToolbox DKIM lookup](./screenshots/mxtoolbox-dkim.png)  
+![Screenshot 11 – MXToolbox DKIM lookup](https://github.com/Mikala-Troupe/soc-level-1-labs/blob/051ea1c2d252a0baef73ddd27fb5d829b99d9482/Week-02_Email-Authentication-Methods/Week-02_Email-Authentication-Methods/screenshots/Lab2SS11.png)  
 **Screenshot 11** – Searched `namecheap.com` with selector `s1` in MXToolbox.
 
 ---
 
-![Screenshot 12 – MXToolbox results](./screenshots/mxtoolbox-results.png)  
+![Screenshot 12 – MXToolbox results](https://github.com/Mikala-Troupe/soc-level-1-labs/blob/051ea1c2d252a0baef73ddd27fb5d829b99d9482/Week-02_Email-Authentication-Methods/Week-02_Email-Authentication-Methods/screenshots/Lab2SS12.png)  
 **Screenshot 12** – Authentication checks passed; DKIM alignment matched **namecheap.com**.
 
 ---
 
-![Screenshot 13 – Authentication results](./screenshots/auth-results.png)  
+![Screenshot 13 – Authentication results](https://github.com/Mikala-Troupe/soc-level-1-labs/blob/051ea1c2d252a0baef73ddd27fb5d829b99d9482/Week-02_Email-Authentication-Methods/Week-02_Email-Authentication-Methods/screenshots/Lab2SS13.png)  
 **Screenshot 13** – Verified results in Sublime Text; DKIM and SPF checks aligned successfully.
 
 ---
