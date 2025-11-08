@@ -84,7 +84,7 @@ This week I practiced analyzing the **email body and content** to identify phish
 ![Screenshot 15 – Encoded malicious link found](https://github.com/Mikala-Troupe/Soc-Level-1-Labs/blob/0ec9598347adeb6edb70a80c27ccdfb8587e3eeb/Week-03_Email-Content-Analysis/Week-03_Email-Content-Analysis/screenshots/Lab3SS15.png)  
 **Screenshot 15**
 - Found encoded string in phishing email
-- Searched for `%2E` (".") to identify encoded domain
+- Searched for `%2E` to identify encoded domain
 
 ![Screenshot 16 – Quoted-printable encoding](https://github.com/Mikala-Troupe/Soc-Level-1-Labs/blob/0ec9598347adeb6edb70a80c27ccdfb8587e3eeb/Week-03_Email-Content-Analysis/Week-03_Email-Content-Analysis/screenshots/Lab3SS16.png)  
 **Screenshot 16**
