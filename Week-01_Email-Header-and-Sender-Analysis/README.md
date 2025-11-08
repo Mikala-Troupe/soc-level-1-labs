@@ -1,7 +1,7 @@
 # Week 1 — Email Header and Sender Analysis Notes
 
 ## Objective
-This lab focused on analyzing the structure of raw email headers to trace message origin, verify sender authenticity, and identify potential signs of spoofing or compromise.
+In this lab I focused on analyzing the structure of raw email headers to trace message origin, verify sender authenticity, and identify potential signs of spoofing or compromise.
 
 ---
 
