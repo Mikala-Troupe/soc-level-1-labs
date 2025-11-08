@@ -10,11 +10,11 @@ SPF lets domain owners specify which mail servers are allowed to send email for 
 
 ![Screenshot 1 – SPF nslookup example](https://github.com/Mikala-Troupe/soc-level-1-labs/blob/051ea1c2d252a0baef73ddd27fb5d829b99d9482/Week-02_Email-Authentication-Methods/Week-02_Email-Authentication-Methods/screenshots/Lab2SS1.png)  
 - Used `nslookup` on **shodan.io** as an example.  
-- **v=spf1** → version indicator.  
-- **ip4:216.117.2.180 ip4:69.72.37.146** → authorized sending IPs.  
-- **include:spf.google.com** → allows Google’s mail servers to send mail for the domain.  
-- **-all** → hard fail (policy = reject unauthorized senders).  
-- **~all** → soft fail (accept but treat with suspicion).  
+- `v=spf1` → version indicator.  
+- `ip4:216.117.2.180 ip4:69.72.37.146` → authorized sending IPs.  
+- `include:spf.google.com` → allows Google’s mail servers to send mail for the domain.  
+- `-all` → hard fail (policy = reject unauthorized senders).  
+- `~all` → soft fail (accept but treat with suspicion).  
 
 ---
 
