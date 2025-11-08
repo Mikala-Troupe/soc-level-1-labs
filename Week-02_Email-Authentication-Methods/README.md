@@ -5,7 +5,7 @@ This week I learned how **SPF**, **DKIM**, and **DMARC** work together to verify
 
 ---
 
-### Sender Policy Framework (SPF)
+### 📌 Sender Policy Framework (SPF)
 SPF lets domain owners specify which mail servers are allowed to send email for their domain.
 
 ![Screenshot 1 – SPF nslookup example](https://github.com/Mikala-Troupe/soc-level-1-labs/blob/051ea1c2d252a0baef73ddd27fb5d829b99d9482/Week-02_Email-Authentication-Methods/Week-02_Email-Authentication-Methods/screenshots/Lab2SS1.png)  
@@ -18,7 +18,7 @@ SPF lets domain owners specify which mail servers are allowed to send email for 
 
 ---
 
-### DomainKeys Identified Mail (DKIM)
+### 📌 DomainKeys Identified Mail (DKIM)
 DKIM is used to verify that an email was really sent from the domain it claims and that the message wasn’t changed in transit.  
 It does this through **Public Key Infrastructure (PKI)**, where a private key signs the email and a public key (stored in DNS) verifies it.
 
@@ -28,7 +28,7 @@ It does this through **Public Key Infrastructure (PKI)**, where a private key si
 
 ---
 
-### Domain-based Message Authentication, Reporting & Conformance (DMARC)
+### 📌 Domain-based Message Authentication, Reporting & Conformance (DMARC)
 DMARC builds on SPF and DKIM to improve email validation and reporting.
 
 - Lets domain owners define what happens if messages fail SPF or DKIM.  
@@ -38,7 +38,7 @@ DMARC builds on SPF and DKIM to improve email validation and reporting.
 
 ---
 
-## Email Analysis
+## 📌 Email Analysis
 
 Below is the breakdown of my hands-on analysis and what I observed at each step.
 
@@ -80,7 +80,7 @@ Below is the breakdown of my hands-on analysis and what I observed at each step.
 
 ---
 
-### In Summary (SPF)
+### 📌 In Summary (SPF)
 - The email originated from `o22.mailservice.namecheap.com` (`149.72.142.11`), which is authorized in the domain’s SPF record.  
 - The SPF record includes `sendgrid.net`, confirming emails can be sent through SendGrid’s infrastructure.  
 - Google’s receiving mail server verified and accepted the message.
@@ -125,7 +125,7 @@ Below is the breakdown of my hands-on analysis and what I observed at each step.
 
 ---
 
-## Notes / Takeaways
+## 📌 Notes / Takeaways
 - The analyzed message was **legitimate**.  
 - Passing SPF/DKIM/DMARC doesn’t mean an email is safe, it just confirms it passed technical checks.  
 - Attackers can still:
@@ -138,7 +138,7 @@ Below is the breakdown of my hands-on analysis and what I observed at each step.
 
 ---
 
-## Summary of Email Authentication
+## 📌 Summary of Email Authentication
 | Protocol | Purpose | What It Does | Analogy |
 |-----------|----------|---------------|----------|
 | **SPF** | Defines which servers can send email for a domain | Lists authorized IP addresses in DNS | “Approved sender list” |
