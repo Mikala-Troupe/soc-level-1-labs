@@ -17,7 +17,7 @@ This week I practiced analyzing the **email body and content** to identify phish
 - `Content-Type` → HTML content type
 - `Content-Transfer-Encoding` → `7bit` here (no encoding applied)
 - Boundary strings separate email parts (HTML vs plaintext)
-- This email only had HTML — no plaintext version (common in phishing)
+- This email only had HTML, no plaintext version (common in phishing)
 
 ![Screenshot 3 – Plaintext & HTML parts](https://github.com/Mikala-Troupe/Soc-Level-1-Labs/blob/0ec9598347adeb6edb70a80c27ccdfb8587e3eeb/Week-03_Email-Content-Analysis/Week-03_Email-Content-Analysis/screenshots/Lab3SS3.png)  
 ![Screenshot 4 – Dual content example](https://github.com/Mikala-Troupe/Soc-Level-1-Labs/blob/0ec9598347adeb6edb70a80c27ccdfb8587e3eeb/Week-03_Email-Content-Analysis/Week-03_Email-Content-Analysis/screenshots/Lab3SS4.png)  
@@ -55,7 +55,7 @@ This week I practiced analyzing the **email body and content** to identify phish
 **Screenshot 10**
 - Very convincing Amazon-style phishing message
 - Real branding & layout copied
-- Shows why **content alone is not enough** — must also review headers & links
+- Shows why **content alone is not enough**, must also review headers & links
 
 ---
 
