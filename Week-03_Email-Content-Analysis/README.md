@@ -5,7 +5,7 @@ This week I practiced analyzing the **email body and content** to identify phish
 
 ---
 
-## Email Content Review
+## 📌 Email Content Review
 
 ### MIME + HTML Inspection
 ![Screenshot 1 – Original phishing email](https://github.com/Mikala-Troupe/Soc-Level-1-Labs/blob/0ec9598347adeb6edb70a80c27ccdfb8587e3eeb/Week-03_Email-Content-Analysis/Week-03_Email-Content-Analysis/screenshots/Lab3SS1.png)  
@@ -25,7 +25,7 @@ This week I practiced analyzing the **email body and content** to identify phish
 
 ---
 
-### Branding & Sender Mismatch
+### 📌 Branding & Sender Mismatch
 ![Screenshot 5 – Trustwallet spoof email](https://github.com/Mikala-Troupe/Soc-Level-1-Labs/blob/0ec9598347adeb6edb70a80c27ccdfb8587e3eeb/Week-03_Email-Content-Analysis/Week-03_Email-Content-Analysis/screenshots/Lab3SS5.png)  
 **Screenshot 5** – Email pretending to be from "Trustwallet"
 
@@ -36,7 +36,7 @@ This week I practiced analyzing the **email body and content** to identify phish
 
 ---
 
-### Grammar, Tone, and Urgency Cues
+### 📌 Grammar, Tone, and Urgency Cues
 ![Screenshot 7 – Greeting + formatting issues](https://github.com/Mikala-Troupe/Soc-Level-1-Labs/blob/0ec9598347adeb6edb70a80c27ccdfb8587e3eeb/Week-03_Email-Content-Analysis/Week-03_Email-Content-Analysis/screenshots/Lab3SS7.png)  
 **Screenshot 7**
 - Generic greeting ("Customer")
@@ -59,7 +59,7 @@ This week I practiced analyzing the **email body and content** to identify phish
 
 ---
 
-### Base64 Encoding & Obfuscation
+### 📌 Base64 Encoding & Obfuscation
 ![Screenshot 11 – Base64 encoded content](https://github.com/Mikala-Troupe/Soc-Level-1-Labs/blob/0ec9598347adeb6edb70a80c27ccdfb8587e3eeb/Week-03_Email-Content-Analysis/Week-03_Email-Content-Analysis/screenshots/Lab3SS11.png)  
 **Screenshot 11**
 - Email body was Base64 encoded
@@ -76,7 +76,7 @@ This week I practiced analyzing the **email body and content** to identify phish
 
 ---
 
-### URL Encoding & Multi-layer Encoding
+### 📌 URL Encoding & Multi-layer Encoding
 ![Screenshot 14 – URL encode in CyberChef](https://github.com/Mikala-Troupe/Soc-Level-1-Labs/blob/0ec9598347adeb6edb70a80c27ccdfb8587e3eeb/Week-03_Email-Content-Analysis/Week-03_Email-Content-Analysis/screenshots/Lab3SS14.png)  
 **Screenshot 14**
 - URL encoded characters using `%` + hex values
@@ -97,7 +97,7 @@ This week I practiced analyzing the **email body and content** to identify phish
 
 ---
 
-## Key Takeaways
+## 📌 Key Takeaways
 - HTML emails can hide scripts, redirects, and obfuscated text
 - Grammar + formatting errors are useful but not definitive
 - Urgency and generic greetings are strong phishing indicators
@@ -114,7 +114,7 @@ This week I practiced analyzing the **email body and content** to identify phish
 
 ---
 
-## Concepts Introduced
+## 📌 Concepts Introduced
 | Concept | Meaning / Use |
 |--------|----------------|
 MIME structure | Defines how email content is formatted (plaintext vs HTML)  
@@ -126,7 +126,7 @@ HTML phishing tricks | Fake forms, hidden links, embedded scripts
 
 ---
 
-## Skills Learned
+## 📌 Skills Learned
 - Identifying phishing red flags in email bodies
 - Understanding MIME parts & boundary strings
 - Recognizing branding mismatches & spoof patterns
