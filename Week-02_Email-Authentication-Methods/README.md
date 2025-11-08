@@ -95,12 +95,12 @@ Below is the breakdown of my hands-on analysis and what I observed at each step.
 
 ![Screenshot 9 – DKIM signature breakdown](https://github.com/Mikala-Troupe/soc-level-1-labs/blob/051ea1c2d252a0baef73ddd27fb5d829b99d9482/Week-02_Email-Authentication-Methods/Week-02_Email-Authentication-Methods/screenshots/Lab2SS9.png)  
 **Screenshot 9** – Analyzing DKIM header fields:  
-- **v=1** → version  
-- **a=rsa-sha256** → signature algorithm  
-- **c=relaxed/relaxed** → allows minor whitespace or line changes without invalidating signature  
-- **d=namecheap.com  s=s1** → domain and selector (used to find public key)  
-- **bh** → body hash (base64-encoded)  
-- **b** → DKIM signature value
+- `v=1` → version  
+- `a=rsa-sha256` → signature algorithm  
+- `c=relaxed/relaxed` → allows minor whitespace or line changes without invalidating signature  
+- `d=namecheap.com  s=s1` → domain and selector (used to find public key)  
+- `bh` → body hash (base64-encoded)  
+- `b` → DKIM signature value
 
 ---
 
