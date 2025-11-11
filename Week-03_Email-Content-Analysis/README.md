@@ -1,7 +1,7 @@
 # Week 3 — Email Content Analysis Notes 💬
 
 ## Overview
-This week I practiced analyzing the **email body and content** to identify phishing tactics. I looked at MIME structure, HTML vs plaintext content, brand spoofing, grammar clues, urgency triggers, and decoding encoded text (Base64, HTML entities, URL encoding). The goal was to understand how attackers hide malicious content and trick users into reacting emotionally.
+This week I practiced analyzing the **email body and content** to identify phishing tactics. I looked at Multi-purpose Internet Mail Extensions (MIME) structure, HTML vs plaintext content, brand spoofing, grammar clues, urgency triggers, and decoding encoded text (Base64, HTML entities, URL encoding). The goal was to understand how attackers hide malicious content and trick users into reacting emotionally.
 
 ---
 
